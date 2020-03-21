@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.panel-body span {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+  display: inline-block;
+  border: 3px solid transparent;
+}
+
+.panel-body span.active {
+  border: 3px solid black;
+}
+
+
+.wrap-result {
+  border: 1px solid black;
+  padding: 15px;
+}
