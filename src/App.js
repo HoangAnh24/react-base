@@ -15,26 +15,28 @@ class App extends Component {
             'fontSize': 14
         };
 
-        this.onSetColor = this.onSetColor.bind(this);
-        this.onChangeSize = this.onChangeSize.bind(this);
-        this.onSettingDefault = this.onSettingDefault.bind(this); 
+        // this.onSetColor = this.onSetColor.bind(this);
+        // this.onChangeSize = this.onChangeSize.bind(this);
+        // this.onSettingDefault = this.onSettingDefault.bind(this);
     }
 
-    onSetColor(pram) {
+    onSetColor = (pram) => {
         this.setState({
-            'color' : pram
+            'color': pram
         });
     }
 
-    onChangeSize(value) { 
-        this.setState({
-            'fontSize' : ((this.state.fontSize + value) >= 8 && (this.state.fontSize) + value <= 36) ? (this.state.fontSize + value) : (this.state.fontSize)
-        }); 
+    onChangeSize = (value) => {
+        if (this.state.fontSize + value >= 10 && this.state.fontSize + value <= 50) {
+            this.setState({
+                fontSize: this.state.fontSize + value
+            });
+        }
     }
 
-    onSettingDefault(value) {
+    onSettingDefault = (value) => {
         console.log(value);
-        if(value){
+        if (value) {
             this.setState = ({
                 'color': 'red',
                 'fontSize': 14
@@ -52,7 +54,7 @@ class App extends Component {
                         </div>
                         <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                             <SizeSetting fontSize={this.state.fontSize} onChangeSize={this.onChangeSize} />
-                            <Reset onSettingDefault={this.onSettingDefault}/>
+                            <Reset onSettingDefault={this.onSettingDefault} />
                         </div>
                         <Result color={this.state.color} fontSize={this.state.fontSize} />
                     </div>
