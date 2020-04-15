@@ -34,9 +34,8 @@ class App extends Component {
         }
     }
 
-    onSettingDefault = (value) => {
-        console.log(value);
-        if (value) {
+    onSettingDefault = (value) => { 
+        if (value) { 
             this.setState = ({
                 'color': 'red',
                 'fontSize': 14
